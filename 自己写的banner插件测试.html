@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			
+			.div1{width: 390px;height: 216px;border: 1px solid black;margin-bottom: 20px;position: relative;}
+			.div1-button{position: absolute;left: 300px;top: 180px;}
+			.div1-button>li{width: 10px;height: 10px;float: left;margin-right: 10px;border: 1px solid black;}
+			.div1-button-on{background: red;}
+			.div1-button-off{background: white;}
+			
+			.div2{width: 444px;height: 325px;border: 1px solid black;margin-bottom: 20px;position: relative;}
+			.div2-button{position: absolute;left: 340px;top: 280px;}
+			.div2-button>li{width: 10px;height: 10px;float: left;margin-right: 10px;border: 1px solid black;}
+			.div2-button-on{background: red;}
+			.div2-button-off{background: white;}
+			
+			.div3{width: 286px;height: 193px;border: 1px solid black;position: relative;}
+			.div3-button{position: absolute;left: 140px;top: 180px;}
+			.div3-button>li{width: 10px;height: 10px;float: left;margin-right: 10px;border: 1px solid black;}
+			.div3-button-on{background: red;}
+			.div3-button-off{background: white;}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<ul>
+				<li style="background: url(img/a1.jpg);"></li>
+				<li style="background: url(img/a2.jpg);"></li>
+				<li style="background: url(img/a3.jpg);"></li>
+			</ul>
+			<ul class="div1-button">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="div2">
+			<ul>
+				<li style="background: url(img/b1.jpg);"></li>
+				<li style="background: url(img/b2.jpg);"></li>
+				<li style="background: url(img/b3.jpg);"></li>
+			</ul>
+			<ul class="div2-button">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="div3">
+			<ul>
+				<li style="background: url(img/c1.jpg);"></li>
+				<li style="background: url(img/c2.jpg);"></li>
+				<li style="background: url(img/c3.jpg);"></li>
+			</ul>
+			<ul class="div3-button">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="js/jquery.banner.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.div1').setBanner('move','div1-button-on','div1-button-off',500,2000,'enter');
+				$('.div2').setBanner('move','div2-button-on','div2-button-off',500,1000,'click');
+				$('.div3').setBanner('breathe','div2-button-on','div2-button-off',500,4000,'enter');
+				 
+			});
+		</script>
+	</body>
+</html>

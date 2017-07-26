@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			div{width: 500px;height: 500px;}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			li {
+				width: 98px;
+				height: 98px;
+				background: lightskyblue;
+				border: 1px solid deepskyblue;
+				color: white;
+			}
+			
+			.ul-top>li {
+				float: left;
+			}
+			.ul-left{float: left;}
+			.ul-right{float: right;}
+			.ul-down{float: left;}
+			.ul-down>li{float: left;}
+			.game-on{position: absolute;top:215px; left: 210px;width: 80px;height: 50px;cursor: pointer;color: white;background: mediumpurple;font-size: 20px;font-family: "微软雅黑";outline: none;border: deepskyblue;}
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div>
+
+			<ul class="ul-top">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="ul-right">
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="ul-left">
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="ul-down">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<button class="game-on">star</button>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript" src="js/jquery.fruitgame.js" ></script>
+		<script type="text/javascript">
+			var fruit = new FruitGame($('.ul-top>li'),$('.ul-right>li'),$('.ul-down>li'),$('.ul-left>li'),$('.game-on'),50);
+			
+		</script>
+	</body>
+
+</html>

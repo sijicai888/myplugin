@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			table{border: 1px solid black;display: inline-block;}
+			th,td{border: 1px solid black;} 
+			th{background: gray;}
+			td,th{padding: 10px 30px;}
+			input[type='button']{margin-top:10px;width: 100px;}
+		</style>
+	</head>
+	<body>
+		<table >
+			<tr>
+				<th>品牌</th>
+				<th>型号</th>
+				<th>价格</th>
+				<th>产地</th>
+			</tr>
+		</table>
+		<input type="button" id="" value="添加一行" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script type="text/javascript">
+			var oneline=[
+			'apple',
+			'6s',
+			4998,
+			'China'
+			];
+			$(function(){
+				$("input[type='button']").click(function(){
+					
+					var txt = '';
+					var data = oneline;
+					for(var i=0;i<data.length;i++){
+						txt = txt+'<td>'+data[i]+'</td>';
+					}
+					
+					//这一行代码很重要
+					//1.txt是个包含了<td></td>的字符串，我们用$()包住它，而把它变成了jq对象。
+					//2.然后我们把它加入到了table中。
+					//3.加入后返回的值还是这一行字符串，我们再把它包裹上<tr></tr>
+					$(txt).appendTo('table').wrapAll('<tr></tr>');
+					//注意一定要先插入后包裹，不然没效果，因为先包裹返回的还是$(txt)，
+					//所以执行插入操作的还是没有变化的$(txt).
+			
+				});
+			});
+			
+			
+			
+		</script>
+	</body>
+</html>
